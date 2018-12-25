@@ -1,0 +1,51 @@
+#recipents {
+    display: none;
+}
+
+#sample_1 td {
+    font-size: 20px;
+}
+
+@media print {
+
+    body {
+        direction: rtl;
+    }
+
+    table {
+        direction: rtl;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 5px;
+    }   
+
+    .table_filterWrapper, .dataTables_length, .dataTables_filter, .dataTables_paginate {
+        display: none;
+    }
+
+    #sample_1_filterWrapper {
+        display: none;
+    }
+
+    .dt-buttons {
+        display: none;
+    }
+
+    #recipents {
+        display: block;
+    }
+
+    #sample_1 td {
+        font-size: 20px;
+    }
+
+    #data table td {
+        font-size: 22px;
+    }
+}
+
