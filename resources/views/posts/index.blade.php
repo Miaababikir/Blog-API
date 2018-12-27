@@ -32,7 +32,6 @@
                             <tbody>
                             @foreach($posts as $post)
                                 <tr>
-                                    {!! dd($post->url); !!}
                                     <td> {{ $post->id }}</td>
                                     <td> {{ $post->creator->name }}</td>
                                     <td> {{ $post->title }}</td>
