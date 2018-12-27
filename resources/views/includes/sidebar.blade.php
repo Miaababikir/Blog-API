@@ -38,20 +38,28 @@
                     <span class="title">الرئيسية</span>
                 </a>
             </li>
+            @if(auth()->user()->isAdmin())
+                <li class="nav-item start">
+                    <a href="javascript:;" class="nav-link nav-toggle">
+                        <i class="icon-users"></i>
+                        <span class="title">المستخدمين</span>
+                        <span class="arrow"></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li class="nav-item">
+                            <a href="{{ route('users.index') }}" class="nav-link ">
+                                <i class="fa fa-user-secret"></i>
+                                <span class="title">المستخدمين</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            @endif
             <li class="nav-item start">
-                <a href="javascript:;" class="nav-link nav-toggle">
-                    <i class="icon-users"></i>
-                    <span class="title">المستخدمين</span>
-                    <span class="arrow"></span>
+                <a href="{{ route('posts.index') }}" class="nav-link ">
+                    <i class="fa fa-paper-plane"></i>
+                    <span class="title">المنشورات</span>
                 </a>
-                <ul class="sub-menu">
-                    <li class="nav-item">
-                        <a href="{{ route('users.index') }}" class="nav-link ">
-                            <i class="fa fa-user-secret"></i>
-                            <span class="title">المستخدمين</span>
-                        </a>
-                    </li>
-                </ul>
             </li>
         </ul>
         <!-- END SIDEBAR MENU -->

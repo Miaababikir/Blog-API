@@ -32,6 +32,7 @@
                             <tbody>
                             @foreach($posts as $post)
                                 <tr>
+                                    {!! dd($post->url); !!}
                                     <td> {{ $post->id }}</td>
                                     <td> {{ $post->creator->name }}</td>
                                     <td> {{ $post->title }}</td>
@@ -39,6 +40,8 @@
                                     <td>
                                         <a href="{{ route('posts.edit', $post->id) }}" class="btn green-haze btn-sm sbold">
                                             <i class="fa fa-edit"></i> تعديل </a>
+                                        <a href="{{ route('posts.show', $post->id) }}" class="btn green-haze btn-sm sbold">
+                                            <i class="fa fa-share"></i> عرض </a>
                                     </td>
                                 </tr>
                             @endforeach

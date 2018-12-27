@@ -8,7 +8,9 @@ class Post extends Model
 {
     protected $guarded = [];
 
-    protected $with = ['creator'];
+    protected $with = ['images'];
+
+    protected $appends = ['username'];
 
     public function creator() {
         return $this->belongsTo(User::class, 'user_id');
@@ -29,6 +31,11 @@ class Post extends Model
 
     public function deleteImages() {
         $this->images->each->delete();
+    }
+
+    public function getUsernameAttribute()
+    {
+        return $this->creator->name;
     }
 
 }
