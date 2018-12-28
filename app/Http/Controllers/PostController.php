@@ -60,7 +60,7 @@ class PostController extends Controller
         ]);
 
 
-        if ($request->filled('photos')) {
+        if ($request->has('photos')) {
             $post->uploadImages($request->photos);
         }
 
